@@ -1,305 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>XKKIYA main page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    html, body, .banner, .filter-bar, .filter-btn, .game-thumbnails-wrap, .game-container, .game-thumbnail, .game-label, a {
-      font-family: 'Noto Sans JP', 'Noto Sans Japanese', 'Segoe UI', Arial, sans-serif !important;
-    }
-    body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background: #1e1e1e;
-  margin: 0;
-  gap: 40px 0;
-  padding-top: 70px;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 32px 32px;
-  background-repeat: repeat;
-}
-    .banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: #000000;
-      color: #ffffff;
-      font-size: 2rem;
-      font-weight: bold;
-      /*letter-spacing: 0em;*/
-      text-align: center;
-      padding: 13px 0 13px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-      user-select: none;
-    }
-    .banner p {
-      margin: 0rem 0 0 0;
-      font-size: 1rem;
-      color: #fff;
-      font-weight: normal;
-    }
-    .filter-bar {
-      margin: 90px 0 0 0;
-      display: flex;
-      gap: 10px;
-    }
-    .filter-btn {
-      padding: 10px 24px;
-      background: #222;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: #4f8cff;
-    }
-    .games-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 40px 0;
-      width: 100%;
-    }
-    .game-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 15px;
-    }
-    .game-thumbnail {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  cursor: pointer;
-  overflow: hidden;
-  padding: 0;
-  background: none;
-  width: auto;
-  height: auto;
-  max-width: 300px;
-}
+    <meta charset="UTF-8">
+    <title>XKKIYA main page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body,
+        .banner,
+        .filter-bar,
+        .filter-btn,
+        .game-thumbnails-wrap,
+        .game-container,
+        .game-thumbnail,
+        .game-label,
+        a {
+            font-family: 'Noto Sans JP', 'Noto Sans Japanese', 'Segoe UI', Arial, sans-serif !important;
+        }
 
-.game-thumbnail img {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  object-fit: contain;
-  transition: box-shadow 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
-}
-    .game-thumbnail:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0px 24px rgba(0, 143, 187, 0.58);
-    }
-    .game-label {
-      color: #fff;
-      font-size: 1.2rem;
-      margin-top: 15px;
-      text-align: center;
-      max-width: 300px;
-    }
-    .game-container[hidden] {
-      display: none !important;
-    }
-  </style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: #1e1e1e;
+            margin: 0;
+            gap: 40px 0;
+            padding-top: 70px;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-repeat: repeat;
+        }
+
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background: #000000;
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: bold;
+            /*letter-spacing: 0em;*/
+            text-align: center;
+            padding: 13px 0 13px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+            user-select: none;
+        }
+
+        .banner p {
+            margin: 0rem 0 0 0;
+            font-size: 1rem;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .filter-bar {
+            margin: 90px 0 0 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: #222;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #4f8cff;
+        }
+
+        .games-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px 0;
+            width: 100%;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px;
+        }
+
+        .game-thumbnail {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            border-radius: 5px;
+            transition: transform 0.25s cubic-bezier(.4, 0, .2, 1), box-shadow 0.25s cubic-bezier(.4, 0, .2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            overflow: hidden;
+            padding: 0;
+            background: none;
+            width: auto;
+            height: auto;
+            max-width: 300px;
+        }
+
+        .game-thumbnail img {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: contain;
+            transition: box-shadow 0.25s cubic-bezier(.4, 0, .2, 1), transform 0.25s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .game-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0px 24px rgba(0, 143, 187, 0.58);
+        }
+
+        .game-label {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .game-container[hidden] {
+            display: none !important;
+        }
+    </style>
 </head>
-<body>
-  <div class="banner">
-    XKKIYA
-    <p>(zee-kay-key-yuh)</p>
-         <div style="color:#fff; font-size:1.1rem; margin: 18px 0 0 0; text-align:center;">
-      <a href="/index.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Games</a> |
-      <a href="/patchlog.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Update Log</a> |
-      <a href="/links.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Links</a>
-    </div>
-  </div>
-  <div class="filter-bar">
-    <button class="filter-btn active" data-filter="All">All</button>
-    <button class="filter-btn" data-filter="Mega Drive">Mega Drive</button>
-    <button class="filter-btn" data-filter="Sega Saturn">Sega Saturn</button>
-    <button class="filter-btn" data-filter="SNES">SNES</button>
-    <button class="filter-btn" data-filter="Nintendo DS">Nintendo DS</button>
-    <button class="filter-btn" data-filter="PlayStation">PlayStation</button>
-       <button class="filter-btn" data-filter="Arcade">Arcade</button>
-    <button class="filter-btn" data-filter="Flash">Flash</button>
-    <button class="filter-btn" data-filter="PC">PC</button>
-  </div>
-  <p style="color: #ffffff">NOTE!! a lot of the games on here don't have their roms (or executables) implemented yet and are not playable. at some point all games will come with (hopefully) working roms.</p>
-  <div class="games-wrap">
-      <div class="game-container" data-category="Mega Drive">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_aliensoldier.jpg">
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/aliensoldierjp.html" style="color:#ffffff;">Alien Soldier</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="Mega Drive">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_gunstarjp.jpg">
-      </div>
-      <div class="game-label">
-        Gunstar Heroes (Japan)
-      </div>
-      <div class="game-label">
-        Gunstar Heroes (USA)
-      </div>
-    </div>
-    <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_bgaregga.jpg">
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/bgaregga.html" style="color:#ffffff;">Battle Garegga</a>
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/bgareggat2.html" style="color:#ffffff;">Battle Garegga (Type 2)</a>
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/bgareggabljp.html" style="color:#ffffff;">Battle Garegga (Japan, Bootleg)</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_batriderjp.jpg">
-      </div>
-      <div class="game-label">
-      <a href="/gamepages/batriderjp.html" style="color:#ffffff;">Armed Police Batrider (B Version)</a>
-      </div>
-      <div class="game-label">
-      <a href="/gamepages/batridereu.html" style="color:#ffffff;">Armed Police Batrider (Europe)</a>
-      </div>
-    </div>
-     <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_sunsetridersus.jpg">
-      </div>
-      <div class="game-label">Sunset Riders (USA)</div>
-      <div class="game-label">Sunset Riders (JP)</div>
-    </div>
-    <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_hyperbbcjp.jpg">
-      </div>
-      <div class="game-label">
-      <a href="/gamepages/hyperbbceea.html" style="color:#ffffff;">Hyper Bishi Bashi Champ (Ver. EAA)</a>
-      </div>
-      <div class="game-label">
-      <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the romset lmao u gotta wait'); return false;">Hyper Bishi Bashi Champ (Ver. JAA)</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="Mega Drive">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_rocketknightadv.jpg">
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/rocketknightjp.html" style="color:#ffffff;">Rocket Knight Adventures (Japan)</a>
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/rocketknightus.html" style="color:#ffffff;">Rocket Knight Adventures (USA)</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="SNES">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/sfc_supbombermanjp.jpg">
-      </div>
-      <div class="game-label">
-        Super Bomberman (Japan)
-      </div>
-      <div class="game-label">
-        Super Bomberman (USA)
-      </div>
-    </div>
-    <div class="game-container" data-category="Nintendo DS">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/nds_sonicrush.jpg">
-      </div>
-      <div class="game-label">
-        Sonic Rush (USA)
-      </div>
-    </div>
-    <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_parodiusj.jpg">
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/parodiusjp.html" style="color:#ffffff;">Parodius Da! [Arcade] (Japan)</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="PC">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/pc_fnflogo-upscale.jpg">
-      </div>
-      <div class="game-label">
-        <a href="/funkin-html5/index.html" style="color:#ffffff;">Friday Night Funkin'</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_azumanga.jpg">
-      </div>
-      <div class="game-label">
-        <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the romset lmao u gotta wait'); return false;">Azumanga Daioh Puzzle Bobble (Japan)</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_btoads.jpg">
-      </div>
-      <div class="game-label">
-        <a href="/gamepages/btoads.html" style="color:#ffffff;">Battletoads [Arcade]</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="Arcade">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_mamorukuncurse.jpg">
-      </div>
-      <div class="game-label">
-        <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the romset lmao u gotta wait'); return false;">Mamoru-kun wa Norowarete Shimatta! [Naomi] (Japan)</a>
-      </div>
-    </div>
-    <div class="game-container" data-category="Mega Drive">
-      <div class="game-thumbnail">
-        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_sparksterjp.jpg">
-      </div>
-      <div class="game-label">
-        <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the rom lmao u gotta wait'); return false;">Sparkster [Mega Drive] (Japan)</a>
-      </div>
-    </div>
-  </div>
-  <script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const containers = document.querySelectorAll('.game-container');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-        containers.forEach(el => {
-          if (filter === 'All' || el.getAttribute('data-category') === filter) {
-            el.removeAttribute('hidden');
-          } else {
-            el.setAttribute('hidden', '');
-          }
-        });
-      });
-    })
-  </script>
+<body>
+    <div class="banner">
+        XKKIYA
+        <p>(zee-kay-key-yuh)</p>
+        <div style="color:#fff; font-size:1.1rem; margin: 18px 0 0 0; text-align:center;">
+            <a href="/index.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Games</a> |
+            <a href="/patchlog.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Update Log</a> |
+            <a href="/links.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Links</a>
+        </div>
+    </div>
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="All">All</button>
+        <button class="filter-btn" data-filter="Mega Drive">Mega Drive</button>
+        <button class="filter-btn" data-filter="Sega Saturn">Sega Saturn</button>
+        <button class="filter-btn" data-filter="SNES">SNES</button>
+        <button class="filter-btn" data-filter="Nintendo DS">Nintendo DS</button>
+        <button class="filter-btn" data-filter="PlayStation">PlayStation</button>
+        <button class="filter-btn" data-filter="Arcade">Arcade</button>
+        <button class="filter-btn" data-filter="Flash">Flash</button>
+        <button class="filter-btn" data-filter="PC">PC</button>
+    </div>
+    <p style="color: #ffffff">NOTE!! a lot of the games on here don't have their roms (or executables) implemented yet and are not playable. at some point all games will come with (hopefully) working roms.</p>
+    <div class="games-wrap">
+        <div class="game-container" data-category="Mega Drive">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_aliensoldier.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/aliensoldierjp.html" style="color:#ffffff;">Alien Soldier</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Mega Drive">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_gunstarjp.jpg">
+            </div>
+            <div class="game-label">
+                Gunstar Heroes (Japan)
+            </div>
+            <div class="game-label">
+                Gunstar Heroes (USA)
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_bgaregga.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/bgaregga.html" style="color:#ffffff;">Battle Garegga</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/bgareggat2.html" style="color:#ffffff;">Battle Garegga (Type 2)</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/bgareggabljp.html" style="color:#ffffff;">Battle Garegga (Japan, Bootleg)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_batriderjp.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/batriderjp.html" style="color:#ffffff;">Armed Police Batrider (B Version)</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/batridereu.html" style="color:#ffffff;">Armed Police Batrider (Europe)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_sunsetridersus.jpg">
+            </div>
+            <div class="game-label">Sunset Riders (USA)</div>
+            <div class="game-label">Sunset Riders (JP)</div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_hyperbbcjp.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/hyperbbceea.html" style="color:#ffffff;">Hyper Bishi Bashi Champ (Ver. EAA)</a>
+            </div>
+            <div class="game-label">
+                <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the romset lmao u gotta wait'); return false;">Hyper Bishi Bashi Champ (Ver. JAA)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Mega Drive">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_rocketknightadv.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/rocketknightjp.html" style="color:#ffffff;">Rocket Knight Adventures (Japan)</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/rocketknightus.html" style="color:#ffffff;">Rocket Knight Adventures (USA)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="SNES">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/sfc_supbombermanjp.jpg">
+            </div>
+            <div class="game-label">
+                Super Bomberman (Japan)
+            </div>
+            <div class="game-label">
+                Super Bomberman (USA)
+            </div>
+        </div>
+        <div class="game-container" data-category="Nintendo DS">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/nds_sonicrush.jpg">
+            </div>
+            <div class="game-label">
+                Sonic Rush (USA)
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_parodiusj.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/parodiusjp.html" style="color:#ffffff;">Parodius Da! [Arcade] (Japan)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="PC">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/pc_fnflogo-upscale.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/funkin-html5/index.html" style="color:#ffffff;">Friday Night Funkin'</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_azumanga.jpg">
+            </div>
+            <div class="game-label">
+                <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the romset lmao u gotta wait'); return false;">Azumanga Daioh Puzzle Bobble (Japan)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_btoads.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/btoads.html" style="color:#ffffff;">Battletoads [Arcade]</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_mamorukuncurse.jpg">
+            </div>
+            <div class="game-label">
+                <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the romset lmao u gotta wait'); return false;">Mamoru-kun wa Norowarete Shimatta! [Naomi] (Japan)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Mega Drive">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_sparksterjp.jpg">
+            </div>
+            <div class="game-label">
+                <a href="#" style="color:#ffffff;" onclick="alert('forgot to add the rom lmao u gotta wait'); return false;">Sparkster [Mega Drive] (Japan)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_ddonpachdaifuk.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/ddonpachbl.html" style="color:#ffffff;">ddonp [Arcade]</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const containers = document.querySelectorAll('.game-container');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                containers.forEach(el => {
+                    if (filter === 'All' || el.getAttribute('data-category') === filter) {
+                        el.removeAttribute('hidden');
+                    } else {
+                        el.setAttribute('hidden', '');
+                    }
+                });
+            });
+        })
+    </script>
 </body>
+
 </html>
