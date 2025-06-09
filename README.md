@@ -7,3 +7,8 @@ retro game emulation handled by EmulatorJS
 
 friday night funkin by The Funkin' Team (source code)
 # game credits #
+|title|system|developer|
+| --- | --- | --- |
+| Alien Soldier | Mega Drive | Treasure |
+| Hyper Bishi Bashi Champ | Arcade (System 573) | Konami |
+| Friday Night Funkin' | PC | The Funkin' Team |
