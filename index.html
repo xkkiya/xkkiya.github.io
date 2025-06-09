@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Hover Scale Elements with Filter</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background: #000;
+      margin: 0;
+      gap: 40px 0;
+    }
+    .banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #404040;
+    color: #4f8cff;
+    font-size: 2.2rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+    padding: 22px 0 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    user-select: none;
+  }
+  .banner p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: normal;
+  }
+  body {
+    padding-top: 70px; /* Make space for the banner */
+  }
+    .filter-bar {
+      margin: 45px 0 0 0;
+      display: flex;
+      gap: 16px;
+    }
+    .filter-btn {
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #4f8cff;
+    }
+    .elements-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px 0;
+      width: 100%;
+    }
+    .element-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5px;
+    }
+    .element {
+      width: 400px;
+      height: 400px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .element:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(79,140,255,0.18);
+    }
+    .element img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: box-shadow 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
+    }
+    .element-label {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-top: 25px;
+      text-align: center;
+      max-width: 300px;
+    }
+    /* Hide elements by default for filtering */
+    .element-container[hidden] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    XKKIYA
+    <p>pronounced zee-kay-key-ya</p>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="All">All</button>
+    <button class="filter-btn" data-filter="Mega Drive">Mega Drive</button>
+    <button class="filter-btn" data-filter="SNES">SNES</button>
+    <button class="filter-btn" data-filter="Arcade">Arcade</button>
+  </div>
+  <div class="elements-wrap">
+      <div class="element-container" data-category="Mega Drive">
+      <div class="element">
+        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_aliensoldier.jpg">
+      </div>
+      <div class="element-label">
+        <a href="gamepages/aliensoldierjapan.html" style="color:#4f8cff;text-decoration:none;">Alien Soldier</a>
+      </div>
+    </div>
+    <div class="element-container" data-category="Mega Drive">
+      <div class="element">
+        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/md_gunstarjp.jpg">
+      </div>
+      <div class="element-label">Gunstar Heroes (Japan)</div>
+      <div class="element-label">Gunstar Heroes (USA)</div>
+    </div>
+    <div class="element-container" data-category="Arcade">
+      <div class="element">
+        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_bgaregga.jpg">
+      </div>
+      <div class="element-label">Battle Garegga</div>
+      <div class="element-label">Battle Garegga (Type 2)</div>
+      <div class="element-label">Battle Garegga (Japan, Bootleg)</div>
+    </div>
+    <div class="element-container" data-category="Arcade">
+      <div class="element">
+        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_batriderjp.jpg">
+      </div>
+      <div class="element-label">Armed Police Batrider (Europe)</div>
+      <div class="element-label">Armed Police Batrider (B Version)</div>
+    </div>
+     <div class="element-container" data-category="Arcade"> <!--add the right mouse button function to here-->
+      <div class="element">
+        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_sunsetridersus.jpg">
+      </div>
+      <div class="element-label">Sunset Riders (USA)</div>
+      <div class="element-label">Sunset Riders (JP)</div>
+    </div>
+    <!-- Add more .element-container blocks with different data-category values! -->
+  </div>
+  <script>
+    // Simple filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const containers = document.querySelectorAll('.element-container');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        containers.forEach(el => {
+          if (filter === 'All' || el.getAttribute('data-category') === filter) {
+            el.removeAttribute('hidden');
+          } else {
+            el.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+    // Right-click image swap for the specific element
+  const sunsetRidersContainer = document.querySelectorAll('.element-container[data-category="Arcade"]')[2]; // 3rd Arcade container
+  const elementDiv = sunsetRidersContainer.querySelector('.element');
+  const img = elementDiv.querySelector('img');
+  const originalImageUrl = img.src;
+  const newImageUrl = "https://file.garden/aEYochToiQk-s_2n/thumb/arc_sunsetridersjp.jpg"; // Change to your alternate image
+
+  elementDiv.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    img.style.transition = "width 0.3s";
+    img.style.width = "0%";
+    setTimeout(() => {
+      img.src = img.src === originalImageUrl ? newImageUrl : originalImageUrl;
+      img.style.width = "100%";
+    }, 300);
+  });
+  </script>
+</body>
+</html>
