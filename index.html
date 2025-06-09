@@ -17,7 +17,6 @@
   margin: 0;
   gap: 40px 0;
   padding-top: 70px;
-  /* Grid tile background using CSS gradients */
   background-image:
     linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
@@ -33,9 +32,9 @@
       color: #ffffff;
       font-size: 2rem;
       font-weight: bold;
-      letter-spacing: 0.2em;
+      /*letter-spacing: 0em;*/
       text-align: center;
-      padding: 18px 0 18px 0;
+      padding: 13px 0 13px 0;
       z-index: 1000;
       box-shadow: 0 2px 12px rgba(0,0,0,0.18);
       user-select: none;
@@ -47,7 +46,7 @@
       font-weight: normal;
     }
     .filter-bar {
-      margin: 60px 0 0 0;
+      margin: 90px 0 0 0;
       display: flex;
       gap: 10px;
     }
@@ -123,6 +122,11 @@
   <div class="banner">
     XKKIYA
     <p>(zee-kay-key-yuh)</p>
+         <div style="color:#fff; font-size:1.1rem; margin: 18px 0 0 0; text-align:center;">
+      <a href="/index.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Games</a> |
+      <a href="/patchlog.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Update Log</a> |
+      <a href="/links.html" style="color:#4f8cff; text-decoration:none; margin:0 8px; font-family: 'Noto Sans JP', Arial, sans-serif; font-weight:400;">Links</a>
+    </div>
   </div>
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="All">All</button>
