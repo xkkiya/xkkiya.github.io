@@ -83,7 +83,7 @@
   justify-content: center;
   color: #fff;
   font-size: 1.5rem;
-  border-radius: 12px;
+  border-radius: 5px;
   transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   cursor: pointer;
@@ -105,7 +105,7 @@
 }
     .element:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 24px rgba(79,140,255,0.18);
+      box-shadow: 0 0px 24px rgba(0, 143, 187, 0.58);
     }
     .element-label {
       color: #fff;
@@ -129,7 +129,7 @@
     <button class="filter-btn" data-filter="Mega Drive">Mega Drive</button>
     <button class="filter-btn" data-filter="Sega Saturn">Sega Saturn</button>
     <button class="filter-btn" data-filter="SNES">SNES</button>
-    <button class="filter-btn" data-filter="MSX">MSX</button>
+    <button class="filter-btn" data-filter="Nintendo DS">Nintendo DS</button>
     <button class="filter-btn" data-filter="PlayStation">PlayStation</button>
        <button class="filter-btn" data-filter="Arcade">Arcade</button>
     <button class="filter-btn" data-filter="Flash">Flash</button>
@@ -163,8 +163,8 @@
       <div class="element">
         <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_batriderjp.jpg">
       </div>
-      <div class="element-label">Armed Police Batrider (Europe)</div>
-      <div class="element-label">Armed Police Batrider (B Version)</div>
+      <a href="/gamepages/batridereu.html" style="color:#ffffff;">Armed Police Batrider (Europe)</a>
+      <a href="/gamepages/batriderjp.html" style="color:#ffffff;">Armed Police Batrider (B Version)</a>
     </div>
      <div class="element-container" data-category="Arcade">
       <div class="element">
@@ -193,6 +193,12 @@
       </div>
       <div class="element-label">Super Bomberman (Japan)</div>
       <div class="element-label">Super Bomberman (USA)</div>
+    </div>
+    <div class="element-container" data-category="Nintendo DS">
+      <div class="element">
+        <img src="https://file.garden/aEYochToiQk-s_2n/thumb/nds_sonicrush.jpg">
+      </div>
+      <div class="element-label">Sonic Rush (USA)</div>
     </div>
   </div>
   <script>
