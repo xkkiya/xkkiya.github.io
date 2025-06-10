@@ -19,4 +19,8 @@ friday night funkin by The Funkin' Team (source code)
 | Super Bomberman | SNES/Super Famicom | Produce! |
 | Super Bomberman 2 | SNES/Super Famicom | Produce! |
 | Super Bomberman 5 | SNES/Super Famicom | Hudson Soft |
+| Sonic Rush | Nintendo DS | Dimps, Sonic Team |
+| Parodius Da! | Arcade | Konami |
 | Friday Night Funkin' | PC | The Funkin' Team |
+| Azumanga Daioh Puzzle Bobble | Arcade (Sega Naomi) | Taito |
+| Battletoads | Arcade | Rare |
