@@ -10,5 +10,17 @@ friday night funkin by The Funkin' Team (source code)
 |title|system|developer|
 | --- | --- | --- |
 | Alien Soldier | Mega Drive | Treasure |
+| Gunstar Heroes | Mega Drive | Treasure |
+| Battle Garegga | Arcade (Toaplan 2) | Raizing |
+| Armed Police Batrider | Arcade (Toaplan 2) | Raizing |
+| Sunset Riders | Arcade (SSR Board) | Konami |
 | Hyper Bishi Bashi Champ | Arcade (System 573) | Konami |
+| Rocket Knight Adventures | Mega Drive | Konami |
+| Super Bomberman | SNES/Super Famicom | Produce! |
+| Super Bomberman 2 | SNES/Super Famicom | Produce! |
+| Super Bomberman 5 | SNES/Super Famicom | Hudson Soft |
+| Sonic Rush | Nintendo DS | Dimps, Sonic Team |
+| Parodius Da! | Arcade | Konami |
 | Friday Night Funkin' | PC | The Funkin' Team |
+| Azumanga Daioh Puzzle Bobble | Arcade (Sega Naomi) | Taito |
+| Battletoads | Arcade | Rare |
