@@ -66,10 +66,10 @@
         }
 
         .filter-btn {
-            padding: 10px 24px;
+            padding: 14px 24px;
             background: #222;
             color: #fff;
-            font-size: 1rem;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: background 0.2s;
         }
@@ -78,6 +78,37 @@
         .filter-btn:hover {
             background: #4f8cff;
         }
+        .lucky-btn {
+    padding: 14px 24px;
+    font-size: 0.8rem;
+    /* font-weight: bold; */
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(270deg, #ff0080, #ff8c00, #fff700, #00ff00, #00cfff, #2e2bff, #ff00c8, #ff0080);
+    background-size: 1600% 1600%;
+    color: #fff;
+    outline: none;
+    border-radius: 4px;
+    animation: rainbow 4s linear infinite;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 0 8px #2228;
+     -webkit-text-stroke: 0.5px #000;
+    text-shadow:
+        1px 1px 0 #000,
+        -1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+    
+}
+.lucky-btn:hover {
+    box-shadow: 0 0 24px #fff70088, 0 0 8px #2228;
+    filter: brightness(1.15);
+}
+@keyframes rainbow {
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
+}
 
         .games-wrap {
             display: flex;
@@ -152,16 +183,18 @@
         </div>
     </div>
     <div class="filter-bar">
-        <button class="filter-btn active" data-filter="All">All</button>
-        <button class="filter-btn" data-filter="Mega Drive">Mega Drive</button>
-        <button class="filter-btn" data-filter="Sega Saturn">Sega Saturn</button>
-        <button class="filter-btn" data-filter="SNES">SNES</button>
-        <button class="filter-btn" data-filter="Nintendo DS">Nintendo DS</button>
-        <button class="filter-btn" data-filter="PlayStation">PlayStation</button>
-        <button class="filter-btn" data-filter="Arcade">Arcade</button>
-        <button class="filter-btn" data-filter="Flash">Flash</button>
-        <button class="filter-btn" data-filter="PC">PC</button>
-    </div>
+    <button class="filter-btn active" data-filter="All">All</button>
+    <button class="filter-btn" data-filter="Mega Drive">Mega Drive</button>
+    <button class="filter-btn" data-filter="Sega Saturn">Sega Saturn</button>
+    <button class="filter-btn" data-filter="NES/Famicom">NES/Famicom</button>
+    <button class="filter-btn" data-filter="SNES/Super Famicom">SNES/Super Famicom</button>
+    <button class="filter-btn" data-filter="Nintendo DS">Nintendo DS</button>
+    <button class="filter-btn" data-filter="PlayStation">PlayStation</button>
+    <button class="filter-btn" data-filter="Arcade">Arcade</button>
+    <button class="filter-btn" data-filter="Flash">Flash</button>
+    <button class="filter-btn" data-filter="PC">PC</button>
+    <button class="lucky-btn" id="luckyBtn">I'm feeling lucky</button>
+</div>
     <p style="color: #ffffff">NOTE!! a lot of the games on here don't have their roms (or executables) implemented yet and are not playable. at some point all games will come with (hopefully) working roms.</p>
     <div class="games-wrap">
         <div class="game-container" data-category="Mega Drive">
@@ -188,13 +221,13 @@
                 <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_bgaregga.jpg">
             </div>
             <div class="game-label">
-                <a href="/gamepages/bgaregga.html" style="color:#ffffff;">Battle Garegga</a>
+                <a href="/gamepages/bgaregga.html" style="color:#ffffff;">Battle Garegga [Arcade]</a>
             </div>
             <div class="game-label">
-                <a href="/gamepages/bgareggat2.html" style="color:#ffffff;">Battle Garegga (Type 2)</a>
+                <a href="/gamepages/bgareggat2.html" style="color:#ffffff;">Battle Garegga [Arcade] (Type 2)</a>
             </div>
             <div class="game-label">
-                <a href="/gamepages/bgareggabljp.html" style="color:#ffffff;">Battle Garegga (Japan, Bootleg)</a>
+                <a href="/gamepages/bgareggabljp.html" style="color:#ffffff;">Battle Garegga [Arcade] (Japan, Bootleg)</a>
             </div>
         </div>
         <div class="game-container" data-category="Arcade">
@@ -206,6 +239,52 @@
             </div>
             <div class="game-label">
                 <a href="/gamepages/batridereu.html" style="color:#ffffff;">Armed Police Batrider (Europe)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_bbakraid.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/batriderjp.html" style="color:#ffffff;">Battle Bakraid [Arcade] (USA)</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/batridereu.html" style="color:#ffffff;">Armed Police Batrider [Arcade] (Japan)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <a href="/gamepages/sorcstrikeus.html">
+                    <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_sstrikerjp.jpg">
+                </a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/sorcstrikeus.html" style="color:#ffffff;">Sorcer Striker [Arcade] (USA)</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/sorcstrikejp.html" style="color:#ffffff;">Mahou Daisakusen [Arcade] (Japan)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_kingdmgpjp.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/sexyparojp.html" style="color:#ffffff;">Kingdom Grandprix [Arcade] (USA)</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/sexyparojp.html" style="color:#ffffff;">Shippu Mahou Daisakusen [Arcade] (Japan)</a>
+            </div>
+        </div>
+        <div class="game-container" data-category="Arcade">
+            <div class="game-thumbnail">
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_dimahoojp.jpg">
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/dimahoous.html" style="color:#ffffff;">Dimahoo (Europe)</a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/dimahoojp.html" style="color:#ffffff;">Great Mahou Daisakusen (Japan)</a>
             </div>
         </div>
         <div class="game-container" data-category="Arcade">
@@ -237,7 +316,7 @@
                 <a href="/gamepages/rocketknightus.html" style="color:#ffffff;">Rocket Knight Adventures (USA)</a>
             </div>
         </div>
-        <div class="game-container" data-category="SNES">
+        <div class="game-container" data-category="SNES/Super Famicom">
             <div class="game-thumbnail">
                 <img src="https://file.garden/aEYochToiQk-s_2n/thumb/sfc_supbombermanjp.jpg">
             </div>
@@ -248,7 +327,7 @@
                 <a href="/gamepages/supbombermanus.html" style="color:#ffffff;">Super Bomberman (USA)</a>
             </div>
         </div>
-        <div class="game-container" data-category="SNES">
+        <div class="game-container" data-category="SNES/Super Famicom">
             <div class="game-thumbnail">
                 <img src="https://file.garden/aEYochToiQk-s_2n/thumb/sfc_supbomberman2jp.jpg">
             </div>
@@ -259,7 +338,7 @@
                 Super Bomberman 2 (USA)
             </div>
         </div>
-        <div class="game-container" data-category="SNES">
+        <div class="game-container" data-category="SNES/Super Famicom">
             <div class="game-thumbnail">
                 <img src="https://file.garden/aEYochToiQk-s_2n/thumb/sfc_supbomberman5jp.jpg">
             </div>
@@ -387,7 +466,7 @@
                 <a href="/gamepages/sparkstermdus.html" style="color:#ffffff;">Sparkster [Mega Drive] (USA)</a>
             </div>
         </div>
-        <div class="game-container" data-category="Mega Drive">
+        <div class="game-container" data-category="SNES/Super Famicom">
             <div class="game-thumbnail">
               <a href="/gamepages/sparkstermdjphtml">
                     <img src="https://file.garden/aEYochToiQk-s_2n/thumb/sfc_sparksterus.jpg">
@@ -425,23 +504,23 @@
         </div>
         <div class="game-container" data-category="Arcade">
             <div class="game-thumbnail">
-                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_sexyparo.jpg">
+                <a href="/gamepages/spcinv95jp.html">
+                    <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_pulirula.jpg">
+                </a>
             </div>
             <div class="game-label">
-                <a href="/gamepages/sexyparojp.html" style="color:#ffffff;">Sexy Parodius [Arcade] (Japan)</a>
+                <a href="/gamepages/spcinv95us.html" style="color:#ffffff;">PuLiRuLa [Arcade] </a>
+            </div>
+            <div class="game-label">
+                <a href="/gamepages/spcinv95jp.html" style="color:#ffffff;">PuLiRuLa [Arcade] (Japan)</a>
             </div>
         </div>
         <div class="game-container" data-category="Arcade">
             <div class="game-thumbnail">
-                <a href="/gamepages/sorcstrikeus.html">
-                    <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_sstrikerjp.jpg">
-                </a>
+                <img src="https://file.garden/aEYochToiQk-s_2n/thumb/arc_sexyparo.jpg">
             </div>
             <div class="game-label">
-                <a href="/gamepages/sorcstrikeus.html" style="color:#ffffff;">Sorcer Striker [Arcade] (USA)</a>
-            </div>
-            <div class="game-label">
-                <a href="/gamepages/sorcstrikejp.html" style="color:#ffffff;">Mahou Daisakusen [Arcade] (Japan)</a>
+                <a href="/gamepages/sexyparojp.html" style="color:#ffffff;">Sexy Parodius [Arcade] (Japan)</a>
             </div>
         </div>
     </div>
@@ -449,36 +528,51 @@
     <br>
     <script>
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const containers = document.querySelectorAll('.game-container');
-        const countMap = {};
-        containers.forEach(el => {
-            const cat = el.getAttribute('data-category');
-            countMap[cat] = (countMap[cat] || 0) + 1;
-        });
-        const totalCount = containers.length;
-        filterBtns.forEach(btn => {
-            const filter = btn.getAttribute('data-filter');
-            if (filter === 'All') {
-                btn.textContent = `All (${totalCount})`;
-            } else {
-                btn.textContent = `${filter} (${countMap[filter] || 0})`;
-            }
-        });
+    const containers = document.querySelectorAll('.game-container');
+    const countMap = {};
+    containers.forEach(el => {
+        const cat = el.getAttribute('data-category');
+        countMap[cat] = (countMap[cat] || 0) + 1;
+    });
+    const totalCount = containers.length;
+    filterBtns.forEach(btn => {
+        const filter = btn.getAttribute('data-filter');
+        if (filter === 'All') {
+            btn.textContent = `All (${totalCount})`;
+        } else {
+            btn.textContent = `${filter} (${countMap[filter] || 0})`;
+        }
+    });
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.getAttribute('data-filter');
-                containers.forEach(el => {
-                    if (filter === 'All' || el.getAttribute('data-category') === filter) {
-                        el.removeAttribute('hidden');
-                    } else {
-                        el.setAttribute('hidden', '');
-                    }
-                });
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+            containers.forEach(el => {
+                if (filter === 'All' || el.getAttribute('data-category') === filter) {
+                    el.removeAttribute('hidden');
+                } else {
+                    el.setAttribute('hidden', '');
+                }
             });
-        })
+        });
+    });
+
+    // Lucky button logic
+    document.getElementById('luckyBtn').addEventListener('click', function() {
+        // Get all containers with at least one valid link
+        const validGames = Array.from(containers).filter(container => {
+            // Find first .game-label a[href] that is not just #
+            return container.querySelector('.game-label a[href]:not([href="#"])');
+        });
+        if (validGames.length === 0) return;
+        const randomGame = validGames[Math.floor(Math.random() * validGames.length)];
+        const link = randomGame.querySelector('.game-label a[href]:not([href="#"])');
+        if (link) {
+            window.location.href = link.href;
+        }
+    });
     </script>
 </body>
 
